@@ -18,7 +18,7 @@ angular.module('viewApp')
         url: '/questions',
         component: 'questions',
         resolve: {
-          questions: function ($q, $rootScope, QuestionsService) {
+          questions: function ($rootScope, QuestionsService) {
             $rootScope.$emit('LOADING', true);
             return QuestionsService.get();
           }
