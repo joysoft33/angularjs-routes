@@ -1,24 +1,25 @@
-angular.module('viewComponents')
-  .component('questions', {
+'use strict';
 
-    templateUrl: '/js/components/questions/questions.html',
+angular.module('viewComponents').component('questions', {
 
-    bindings: {
-      $transition$: '<',
-      questions: '<'
-    },
+  templateUrl: '/js/components/questions/questions.html',
 
-    controller: function () {
+  bindings: {
+    $transition$: '<',
+    questions: '<'
+  },
 
-      this.$onInit = () => {
+  controller: function () {
 
-        let to = this.$transition$.to();
-        let toParams = this.$transition$.params("to");
-        let from = this.$transition$.from();
-        let fromParams = this.$transition$.params("from");
+    this.$onInit = () => {
 
-        console.log(`to:${to.name}, toParams:${toParams}, from:${from.name}, fromParams:${fromParams}`);
-      };
-    }
+      let to = this.$transition$.to();
+      let toParams = this.$transition$.params("to");
+      let from = this.$transition$.from();
+      let fromParams = this.$transition$.params("from");
 
-  });
+      console.log(`to:${to.name}, toParams:${toParams}, from:${from.name}, fromParams:${fromParams}`);
+    };
+  }
+
+});

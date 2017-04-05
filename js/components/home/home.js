@@ -1,16 +1,18 @@
-angular.module('viewComponents')
-  .component('home', {
+'use strict';
 
-    templateUrl: '/js/components/home/home.html',
+angular.module('viewComponents').component('home', {
 
-    bindings: {
+  templateUrl: '/js/components/home/home.html',
 
-    },
+  bindings: {
 
-    controller: function($state) {
+  },
 
-      this.$onInit = () => {
-      };
-    }
-    
-  });
+  controller: function ($state) {
+
+    this.$onInit = () => {
+      
+    };
+  }
+
+});

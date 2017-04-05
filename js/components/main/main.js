@@ -1,18 +1,18 @@
-angular.module('viewComponents')
-  .component('main', {
+'use strict';
 
-    templateUrl: '/js/components/main/main.html',
+angular.module('viewComponents').component('main', {
 
-    bindings: {
-      loading: '<'
-    },
+  templateUrl: '/js/components/main/main.html',
 
-    controller: function ($rootScope) {
+  bindings: {
+    loading: '<'
+  },
 
-      $rootScope.$on('LOADING', (evt, param) => {
-        this.loading = param;
-      });
+  controller: function ($rootScope) {
 
-    }
+    $rootScope.$on('LOADING', (evt, param) => {
+      this.loading = param;
+    });
+  }
 
-  });
+});

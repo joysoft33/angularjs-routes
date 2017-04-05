@@ -1,6 +1,8 @@
-angular.module('viewServices')
+'use strict';
 
-  .service('QuestionsService', function ($http, $q) {
+angular.module('viewServices').service('QuestionsService',
+
+  function ($http, $q) {
 
     this.get = () => {
 

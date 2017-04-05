@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('viewApp')
 
   .config(function ($stateProvider, $urlRouterProvider) {

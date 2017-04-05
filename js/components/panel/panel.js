@@ -1,17 +1,20 @@
-angular.module('viewComponents')
-  .component('panel', {
+'use strict';
 
-    templateUrl: '/js/components/panel/panel.html',
+angular.module('viewComponents').component('panel', {
 
-    bindings: {
-      title: '@'
-    },
+  templateUrl: '/js/components/panel/panel.html',
 
-    controller: function($timeout, $state) {
+  bindings: {
+    title: '@'
+  },
 
-      this.switchView = () => {
-        $timeout(() => $state.go('home', { id: 100 }), 5000);
-      };
-    }
+  controller: function ($timeout, $state) {
 
-  });
+    this.switchView = () => {
+      $timeout(() => $state.go('home', {
+        id: 100
+      }), 5000);
+    };
+  }
+
+});
