@@ -1,0 +1,16 @@
+{
+  "name": "dojo",
+  "version": "1.0.0",
+  "description": "Dojo",
+  "main": "js/app.js",
+  "dependencies": {
+    "angular": "^1.6.3",
+    "bootstrap": "^3.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "WCS",
+  "license": "ISC"
+}
