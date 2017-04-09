@@ -2,7 +2,7 @@
 
 angular.module('viewServices').service('QuestionsService',
 
-  function ($http, $q) {
+  function ($log, $http, $q) {
 
     this.get = () => {
 
@@ -11,7 +11,7 @@ angular.module('viewServices').service('QuestionsService',
       $http.get('http://localhost:3000/dishes').then((response) => {
         defer.resolve(response.data);
       }).catch((err) => {
-        console.log(`SVC: ERROR!!! ${err}`);
+        $log.debug(`SVC: ERROR!!! ${err}`);
         defer.reject(err);
       });
 
