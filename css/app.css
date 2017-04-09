@@ -1,4 +1,33 @@
 .loader {
+  margin-bottom: 20px;
   font-size: 2em;
   opacity: 0.8;
+}
+
+.error {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid red;
+  color: red;
+}
+
+.panel-heading a[ui-sref="home"] {
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50%;
+  float: right;
+  width: 25px;
+  height: 25px;
+  line-height: 26px;
+  color: #999;
+}
+
+.panel-heading a[ui-sref="home"]:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+
+.users table {
+  width: 100%;
 }

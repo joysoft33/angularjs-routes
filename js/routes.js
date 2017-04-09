@@ -11,20 +11,54 @@ angular.module('viewApp')
         component: 'home'
       })
       .state({
-        name: 'homeId',
-        url: '/home/:id',
-        component: 'home'
-      })
-      .state({
-        name: 'questions',
-        url: '/questions',
-        component: 'questions',
+        name: 'users',
+        url: '/users',
+        component: 'users',
         resolve: {
-          questions: function ($rootScope, QuestionsService) {
-            $rootScope.$emit('LOADING', true);
-            return QuestionsService.get();
+          users: function (UsersService) {
+            return UsersService.getAll();
           }
         }
+      })
+      .state({
+        name: 'user',
+        url: '/user/:id',
+        component: 'user',
+        resolve: {
+          user: function (UsersService, $stateParams) {
+            return UsersService.get($stateParams.id);
+          }
+        }
+      })
+      .state({
+        name: 'newUser',
+        url: '/user/',
+        component: 'user'
+      })
+      .state({
+        name: 'posts',
+        url: '/posts',
+        component: 'posts',
+        resolve: {
+          posts: function (PostsService) {
+            return PostsService.getAll();
+          }
+        }
+      })
+      .state({
+        name: 'post',
+        url: '/post/:id',
+        component: 'post',
+        resolve: {
+          post: function (PostsService, $stateParams) {
+            return PostsService.get($stateParams.id);
+          }
+        }
+      })
+      .state({
+        name: 'newPost',
+        url: '/post/',
+        component: 'post'
       });
 
     $urlRouterProvider.otherwise('/home');
