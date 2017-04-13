@@ -11,7 +11,7 @@
   color: red;
 }
 
-.panel-heading a[ui-sref="home"] {
+.panel-heading a[ui-sref="app.home"] {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -23,7 +23,7 @@
   color: #999;
 }
 
-.panel-heading a[ui-sref="home"]:hover {
+.panel-heading a[ui-sref="app.home"]:hover {
   background-color: #aaa;
   color: #fff;
 }

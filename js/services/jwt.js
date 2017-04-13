@@ -1,20 +1,20 @@
 'use strict';
 
-angular.module('viewServices').service('JWTService',
+angular.module('appServices').service('JWTService',
 
-  function ($http, $q) {
+  function (localStorageService) {
 
     const JWT_KEY = 'jwt$app';
 
-    this.save =(token) => {
-      localStorage[JWT_KEY] = token;
+    this.save = (token) => {
+      localStorageService.set(JWT_KEY, token);
     };
 
     this.get = () => {
-      return localStorage[JWT_KEY];
+      return localStorageService.get(JWT_KEY);
     }
 
     this.destroy = () => {
-      localStorage.removeItem(JWT_KEY);
+      localStorageService.remove(JWT_KEY);
     }
 });

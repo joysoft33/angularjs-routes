@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('viewControllers', []);
+angular.module('appControllers', []);

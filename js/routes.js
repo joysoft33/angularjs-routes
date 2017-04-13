@@ -2,10 +2,7 @@
 
 angular.module('viewApp')
 
-  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
-
-    // Push our interceptor for auth
-    $httpProvider.interceptors.push(authInterceptor);
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
       .state({
@@ -76,19 +73,13 @@ angular.module('viewApp')
         name: 'app.login',
         url: '/login',
         title: 'Se connecter',
-        component: 'auth',
-        resolve: {
-          register: false
-        }
+        component: 'auth'
       })
       .state({
         name: 'app.register',
         url: '/register',
         title: `S'enregistrer`,
-        component: 'auth',
-        resolve: {
-          register: true
-        }
+        component: 'auth'
       });
 
     ;

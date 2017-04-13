@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewServices').service('UsersService',
+angular.module('appServices').service('UsersService',
 
   function ($http, $q) {
 
@@ -45,19 +45,6 @@ angular.module('viewServices').service('UsersService',
       var defer = $q.defer();
 
       promise.then((response) => {
-        defer.resolve(response.data);
-      }).catch((error) => {
-        defer.reject(error.statusText);
-      });
-
-      return defer.promise;
-    };
-
-    this.searchByEmail = (email) => {
-
-      var defer = $q.defer();
-
-      $http.get(BASE_URL + `/q?${email}`).then((response) => {
         defer.resolve(response.data);
       }).catch((error) => {
         defer.reject(error.statusText);

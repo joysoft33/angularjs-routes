@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewComponents').component('user', {
+angular.module('appComponents').component('user', {
 
   template: `
     <panel title="Utilisateur">

@@ -2,7 +2,8 @@
 
 angular.module('viewApp', [
   'ui.router',
-  'viewServices',
-  'viewComponents',
-  'viewControllers'
+  'LocalStorageModule',
+  'appServices',
+  'appComponents',
+  'appControllers'
 ]);

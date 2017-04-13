@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewComponents').component('posts', {
+angular.module('appComponents').component('posts', {
 
   template: `
     <panel class="users" title="Liste des articles">

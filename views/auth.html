@@ -5,10 +5,10 @@
       <div class="col-md-6 offset-md-3 col-xs-12">
         <h1 class="text-xs-center" ng-bind="$ctrl.title"></h1>
         <p class="text-xs-center">
-          <a ui-sref="login" ng-show="$ctrl.authType === 'register'">
+          <a ui-sref="app.login" ng-show="$ctrl.authType === 'register'">
             Vous avez déjà un compte ?
           </a>
-          <a ui-sref="register" ng-show="$ctrl.authType === 'login'">
+          <a ui-sref="app.register" ng-show="$ctrl.authType === 'login'">
             Vous désirez créer un compte ?
           </a>
         </p>
@@ -26,7 +26,7 @@
             <fieldset class="form-group">
               <input class="form-control form-control-lg" type="password" placeholder="Password" ng-model="$ctrl.formData.password" />
             </fieldset>
-            <button class="btn btn-lg btn-primary pull-xs-right" type="submit" ng-bind="$ctrl.title">
+            <button class="btn btn-primary pull-xs-right" type="submit" ng-bind="$ctrl.title">
             </button>
           </fieldset>
         </form>

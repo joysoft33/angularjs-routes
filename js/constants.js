@@ -3,5 +3,5 @@
 angular.module('viewApp')
 
   .constant('AppConstants', {
-    api: 'http://localhost:3000/users'
+    api: 'http://localhost:3000'
   });

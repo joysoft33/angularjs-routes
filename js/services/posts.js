@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewServices').service('PostsService',
+angular.module('appServices').service('PostsService',
 
   function ($http, $q) {
 

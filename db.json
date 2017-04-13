@@ -1,5 +1,6 @@
 {
-  "users": [{
+  "users": [
+    {
       "id": 1,
       "name": "Leanne Graham",
       "username": "Bret",
@@ -228,9 +229,16 @@
         "catchPhrase": "Centralized empowering task-force",
         "bs": "target end-to-end models"
       }
+    },
+    {
+      "username": "Eric LEON",
+      "password": "cirenoel",
+      "email": "ericp.leon@gmail.com",
+      "id": 11
     }
   ],
-  "posts": [{
+  "posts": [
+    {
       "userId": 1,
       "id": 1,
       "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
@@ -831,7 +839,8 @@
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     }
   ],
-  "comments": [{
+  "comments": [
+    {
       "postId": 1,
       "id": 1,
       "name": "id labore ex et quam laborum",

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewComponents').component('home', {
+angular.module('appComponents').component('home', {
 
   template: `
     <panel title="Accueil" cancelable="false">

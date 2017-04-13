@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewComponents').component('panel', {
+angular.module('appComponents').component('panel', {
 
   template: `
     <div class="panel panel-default">

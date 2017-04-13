@@ -1,28 +1,28 @@
 'use strict';
 
-angular.module('viewComponents').component('auth', {
+angular.module('appComponents').component('auth', {
 
-  template: '/views/auth.html',
+  templateUrl: '/views/auth.html',
 
-  controller: function (AuthService, $state) {
+  controller: function (AuthService, $state, $log) {
 
     this.$onInit = () => {
       this.title = $state.current.title;
-      this.authType = $state.current.name;
+      this.authType = $state.current.name.replace('app.', '');
+      $log.info(`Auth component initialized: ${this.authType}`);
     };
 
     this.submitForm = () => {
  
-      console.log(this.formData);
       this.isSubmitting = true;
 
       AuthService.attemptAuth(this.authType, this.formData).then((response) => {
         this.isSubmitting = false;
-        console.log(response);
+        $log.debug(response);
       }).catch((err) => {
         this.isSubmitting = false;
         this.errors = err.data.errors;
-        console.log(err.data.errors);
+        $log.error(err.data.errors);
       });
     };
 

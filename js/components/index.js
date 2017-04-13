@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('viewComponents', []);
+angular.module('appComponents', []);

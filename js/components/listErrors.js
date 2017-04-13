@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('viewComponents').component('listErrors', {
+angular.module('appComponents').component('listErrors', {
 
   template: `
     <ul class="error-messages" ng-show="$ctrl.errors">
