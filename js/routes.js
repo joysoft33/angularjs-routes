@@ -2,16 +2,28 @@
 
 angular.module('viewApp')
 
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+
+    // Push our interceptor for auth
+    $httpProvider.interceptors.push(authInterceptor);
 
     $stateProvider
       .state({
-        name: 'home',
+        name: 'app',
+        abstract: true,
+        resolve: {
+          auth: function (AuthService) {
+            return AuthService.verifyAuth();
+          }
+        }
+      })
+      .state({
+        name: 'app.home',
         url: '/home',
         component: 'home'
       })
       .state({
-        name: 'users',
+        name: 'app.users',
         url: '/users',
         component: 'users',
         resolve: {
@@ -21,7 +33,7 @@ angular.module('viewApp')
         }
       })
       .state({
-        name: 'user',
+        name: 'app.user',
         url: '/user/:id',
         component: 'user',
         resolve: {
@@ -31,12 +43,12 @@ angular.module('viewApp')
         }
       })
       .state({
-        name: 'newUser',
+        name: 'app.newUser',
         url: '/user/',
         component: 'user'
       })
       .state({
-        name: 'posts',
+        name: 'app.posts',
         url: '/posts',
         component: 'posts',
         resolve: {
@@ -46,7 +58,7 @@ angular.module('viewApp')
         }
       })
       .state({
-        name: 'post',
+        name: 'app.post',
         url: '/post/:id',
         component: 'post',
         resolve: {
@@ -56,10 +68,30 @@ angular.module('viewApp')
         }
       })
       .state({
-        name: 'newPost',
+        name: 'app.newPost',
         url: '/post/',
         component: 'post'
+      })
+      .state({
+        name: 'app.login',
+        url: '/login',
+        title: 'Se connecter',
+        component: 'auth',
+        resolve: {
+          register: false
+        }
+      })
+      .state({
+        name: 'app.register',
+        url: '/register',
+        title: `S'enregistrer`,
+        component: 'auth',
+        resolve: {
+          register: true
+        }
       });
 
-    //$urlRouterProvider.otherwise('/home');
+    ;
+
+    $urlRouterProvider.otherwise('/home');
   });

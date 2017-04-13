@@ -8,7 +8,7 @@ angular.module('viewComponents').component('posts', {
         <tbody>
           <tr ng-repeat="post in $ctrl.posts track by post.id">
             <td ng-bind="post.user.username"></td>
-            <td><a ng-bind="post.title" ui-sref="post({id: post.id})"></a></td>
+            <td><a ng-bind="post.title" ui-sref="app.post({id: post.id})"></a></td>
           </tr>
         </tbody>
       </table>

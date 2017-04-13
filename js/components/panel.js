@@ -6,7 +6,7 @@ angular.module('viewComponents').component('panel', {
     <div class="panel panel-default">
       <div class="panel-heading">
         {{$ctrl.title}}
-        <a ng-if="$ctrl.cancelable" ui-sref="home" title="Annuler"><i class="glyphicon glyphicon-remove"></i></a>
+        <a ng-if="$ctrl.cancelable" ui-sref="app.home" title="Annuler"><i class="glyphicon glyphicon-remove"></i></a>
       </div>
       <div class="panel-body">
         <div ng-transclude></div>

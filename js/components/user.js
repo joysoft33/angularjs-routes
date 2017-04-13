@@ -21,7 +21,7 @@ angular.module('viewComponents').component('user', {
         </div>
         <hr />
         <button class="btn btn-success" ng-click="$ctrl.submit()">Valider</button>
-        <a class="btn btn-default" ui-sref="home">Annuler</a>
+        <a class="btn btn-default" ui-sref="app.home">Annuler</a>
       </form>
     </panel>  
   `,
