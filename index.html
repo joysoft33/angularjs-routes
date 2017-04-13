@@ -11,26 +11,55 @@
 
 <body ng-app="viewApp">
 
-  <main></main>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div id="navbar">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Accueil</a></li>
+          <li><a ui-sref="users">Utilisateurs</a></li>
+          <li><a ui-sref="posts">Articles</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Utilisateur<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a ui-sref="connect">Connexion</a></li>
+              <li><a ui-sref="profile">Mon compte</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <script src="node_modules/angular/angular.js"></script>
-  <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  
+  <div class="container">
+    <div ng-controller="main as ctrl">
+
+      <div class="loader" ng-show="ctrl.loading">Chargement en cours...</div>
+      <div class="error" ng-show="ctrl.errorMessage" ng-bind="ctrl.errorMessage"></div>
+
+      <ui-view is-loading="ctrl.isLoading()" show-loading="ctrl.showLoading(show)">
+      </ui-view>
+    </div>
+  </div>
+
+  <script src="node_modules/angular/angular.js" type="text/javascript"></script>
+  <script src="node_modules/angular-ui-router/release/angular-ui-router.js" type="text/javascript"></script>
+  <script src="node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+
   <script src="js/app.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/services/index.js"></script>
   <script src="js/services/users.js"></script>
   <script src="js/services/posts.js"></script>
   <script src="js/components/index.js"></script>
-  <script src="js/components/main.js"></script>
   <script src="js/components/home.js"></script>
   <script src="js/components/panel.js"></script>
   <script src="js/components/users.js"></script>
   <script src="js/components/user.js"></script>
   <script src="js/components/posts.js"></script>
   <script src="js/components/post.js"></script>
+  <script src="js/controllers/index.js"></script>
+  <script src="js/controllers/main.js"></script>
 
 </body>
 

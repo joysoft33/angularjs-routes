@@ -1,7 +1,8 @@
 'use strict';
 
-const app = angular.module('viewApp', [
+angular.module('viewApp', [
   'ui.router',
   'viewServices',
-  'viewComponents'
+  'viewComponents',
+  'viewControllers'
 ]);

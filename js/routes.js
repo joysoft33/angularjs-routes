@@ -61,5 +61,5 @@ angular.module('viewApp')
         component: 'post'
       });
 
-    $urlRouterProvider.otherwise('/home');
+    //$urlRouterProvider.otherwise('/home');
   });
